@@ -63,7 +63,7 @@ module.exports = {
       }
     })
     var result
-    await DB("addInfo").where('nickName', ctx.request.query.nickName).select().then(function (rows) {
+    await DB("todoInfo").where('nickName', ctx.request.query.nickName).select().then(function (rows) {
       result = rows
       return
     })
