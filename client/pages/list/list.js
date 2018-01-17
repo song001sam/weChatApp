@@ -8,13 +8,24 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    hiddenmodalput: true
+    hiddenmodalput: true,
+    todoInfo:[]
   },
   onLoad: function () {
     this.setData({
       userInfo: app.globalData.userInfo,
       hasUserInfo: true
     })
+    qcloud.request({
+      url: config.service.todoListUrl,
+      success: function (response) {
+        this.data.todoInfo.push(response.data.data)
+      },
+      data: { nickName: app.globalData.userInfo.nickName},
+      fail: function (err) {
+        util.showModel('保存失败', err)
+      }
+    });
   },
   todoInput: function (e) {
     this.setData({
