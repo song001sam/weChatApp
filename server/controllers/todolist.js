@@ -1,6 +1,6 @@
 const { mysql: config } = require('../config')
 module.exports = {
-  todoAdd: async ctx => {
+  add: async ctx => {
     const DB = require('knex')({
       client: 'mysql',
       connection: {
@@ -19,7 +19,7 @@ module.exports = {
 
     ctx.state.data = "ok123"
   },
-  todoDel: async ctx => {
+  del: async ctx => {
     const DB = require('knex')({
       client: 'mysql',
       connection: {
@@ -40,7 +40,7 @@ module.exports = {
     ctx.state.data = result
 
   },
-  todoFinish: async ctx => {
+  finish: async ctx => {
     const DB = require('knex')({
       client: 'mysql',
       connection: {
