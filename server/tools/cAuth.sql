@@ -54,11 +54,11 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 DROP TABLE IF EXISTS `todoInfo`;
 CREATE TABLE `todoInfo` (
-  `id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nickName` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `todoName` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `updateTime` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `finishFlag` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+  `finishFlag` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `openid` (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='待办列表信息';
