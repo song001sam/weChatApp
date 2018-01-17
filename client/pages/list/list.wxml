@@ -7,14 +7,18 @@
       <view>
       <button size='mini' bindtap='new'>新增</button>
       <button size='mini' bindtap='del'>删除</button>
-      <button size='mini' bindtap='del'>完成</button>
+      <button size='mini' bindtap='finish'>完成</button>
       </view>
     </view>
-    <view class="todo">
-      
+    <radio-group class="radio-group" bindchange="radioChange">
+    <view wx:for="{{todoInfo}}" wx:key="id" wx:for-index='idx'>
+    <view  class="todoList" ><view class="todoListTop"> <radio value="{{item.id}}" checked = "{{idx==0}}"/>{{idx+1}}|{{item.todoName}}</view><view wx:if="{{item.finishFlag==0}}">{{item.updateTime}}|已完成</view><view wx:else>{{item.updateTime}}未完成</view></view>
+ 
     </view>
+  </radio-group>
   </form>
   <modal hidden="{{hiddenmodalput}}" title="请输入待办事项" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
-    <input type='text'placeholder="待办事项" auto-focus bindinput="todoInput"/>  
+ 
+    <input type='text' value='{{todoName}}' placeholder="待办事项" auto-focus bindinput='todoInput'/>  
 </modal> 
 </view>

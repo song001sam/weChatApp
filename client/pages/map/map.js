@@ -26,7 +26,7 @@ Page({
   submitAdd: function (event) {
     
     var flag = true;
-    if (app.globalData.userInfo.nickName =="史晓洁"){
+    if (app.globalData.userInfo.nickName =="打一个岔"){
       wx.showModal({
         title: '提示',
         content: '小仙女不用告诉狗子位置，确认告诉他么？',

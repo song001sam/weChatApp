@@ -10,3 +10,12 @@
 .list1{
   display:inline;
 }
+.todoList{
+  font-size: 15px;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.todoListTop{
+  display: block
+}
