@@ -13,7 +13,7 @@ module.exports = {
         multipleStatements: true
       }
     })
-    await DB("todoInfo").insert(request.query)
+    await DB("todoInfo").insert(ctx.request.query)
     ctx.state.data = "ok123"
   },
   del: async ctx => {
