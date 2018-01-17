@@ -14,7 +14,7 @@ module.exports ={add: async ctx => {
   })
 
   
-  await DB("addInfo").where('nickName', '=', ctx.request.query.nickName).update(ctx.request.query)
+  await DB("mapInfo").where('nickName', '=', ctx.request.query.nickName).update(ctx.request.query)
  
   ctx.state.data = "ok123"
 },
@@ -32,7 +32,7 @@ check:async ctx => {
     }
   })
   var result
-  await DB("addInfo").where('nickName', '!=', ctx.request.query.nickName).select().then(function (rows) {
+  await DB("mapInfo").where('nickName', '!=', ctx.request.query.nickName).select().then(function (rows) {
     result = rows[0]
     return 
   })

@@ -35,7 +35,8 @@ CREATE TABLE `cSessionInfo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='会话管理用户信息';
 
 DROP TABLE IF EXISTS `addInfo`;
-CREATE TABLE `addInfo` (
+DROP TABLE IF EXISTS `mapInfo`;
+CREATE TABLE `mapInfo` (
   `nickName` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `accuracy` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `altitude` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -49,4 +50,16 @@ CREATE TABLE `addInfo` (
   PRIMARY KEY (`nickName`),
   KEY `openid` (`nickName`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户地址信息';
+SET FOREIGN_KEY_CHECKS = 1;
+
+DROP TABLE IF EXISTS `todoInfo`;
+CREATE TABLE `todoInfo` (
+  `id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL AUTO_INCREMENT,
+  `nickName` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `todoName` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `updateTime` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `finishFlag` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+  PRIMARY KEY (`id`),
+  KEY `openid` (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='待办列表信息';
 SET FOREIGN_KEY_CHECKS = 1;

@@ -63,7 +63,7 @@ Page({
       }
     })
     if (this.data.userInfo) {
-      if (this.data.userInfo != "程序猿千歌 - ( ゜- ゜)つロ 乾杯~" || this.data.userInfo != "史晓洁") {
+      if (this.data.userInfo != "程序猿千歌 - ( ゜- ゜)つロ 乾杯~" || this.data.userInfo != "打一个岔") {
         this.data.userInfo.hasUserInfo=false
       }
     }
@@ -79,7 +79,7 @@ Page({
   submitAdd: function (event) {
     
     var flag = true;
-    if (app.globalData.userInfo.nickName =="史晓洁"){
+    if (app.globalData.userInfo.nickName =="打一个岔"){
       wx.showModal({
         title: '提示',
         content: '小仙女不用告诉狗子位置，确认告诉他么？',

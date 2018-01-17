@@ -7,6 +7,29 @@
 		"newFeature": true
 	},
 	"appid": "wxf0ff970938d7d84a",
-	"projectname": "nodeJS",
-	"condition": {}
+	"projectname": "weChatApp",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "列表",
+					"pathName": "pages/list/list"
+				}
+			]
+		}
+	}
 }

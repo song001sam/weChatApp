@@ -8,14 +8,30 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    hiddenmodalput: true
   },
   onLoad: function () {
     this.setData({
       userInfo: app.globalData.userInfo,
       hasUserInfo: true
     })},
-  getUserInfo: function (e) {
-    
+  new: function(){
+    this.setData({
+      hiddenmodalput: !this.data.hiddenmodalput
+    })
+  },
+  del:function(){
+   
+  },
+  cancel: function () {
+    this.setData({
+      hiddenmodalput: true
+    });
+  },
+  //确认  
+  confirm: function () {
+    this.setData({
+      hiddenmodalput: true
+    })
   }
 })
