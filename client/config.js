@@ -23,9 +23,19 @@ var config = {
         // 上传图片接口
         uploadUrl: `${host}/weapp/upload`,
 
-        addUrl: `${host}/weapp/add`,
+        mapAddUrl: `${host}/weapp/mapAdd`,
 
-        checkUrl: `${host}/weapp/check`
+        mapCheckUrl: `${host}/weapp/mapCheck`,
+
+        todoAddUrl: `${host}/weapp/todoAdd`,
+
+        todoDelUrl: `${host}/weapp/todoDel`,
+
+        todoFinishUrl: `${host}/weapp/todoFinish`,
+
+        todoListUrl: `${host}/weapp/todoList`
+
+
     }
 };
 

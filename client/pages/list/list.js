@@ -15,6 +15,11 @@ Page({
       userInfo: app.globalData.userInfo,
       hasUserInfo: true
     })},
+  todoInput:function(e){
+    this.setData({
+      todoName: e.detail.value
+    })
+  },
   new: function(){
     this.setData({
       hiddenmodalput: !this.data.hiddenmodalput
@@ -30,8 +35,27 @@ Page({
   },
   //确认  
   confirm: function () {
+    util.showBusy('正在保存')
     this.setData({
       hiddenmodalput: true
     })
+    var res = {
+      nickName: app.globalData.userInfo.nickName,
+      todoName: this.data.todoName,
+      updateTime: util.formatTime(new Date()),
+      finishFlag:0
+    }
+    console.info(res)
+    qcloud.request({
+      url: config.service.todoAddUrl,
+      success: function (response) {
+        util.showSuccess('保存成功')
+      },
+      data: res,
+      fail: function (err) {
+        util.showModel('保存失败', err)
+        console.log('登录失败', err)
+      }
+    });
   }
 })

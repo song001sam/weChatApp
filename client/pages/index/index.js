@@ -101,7 +101,7 @@ Page({
           res.dateTime = util.formatTime(new Date())
           res.nickName = app.globalData.userInfo.nickName
           qcloud.request({
-            url: config.service.addUrl,
+            url: config.service.mapAddUrl,
             success: function (response) {
               util.showSuccess('保存成功')
             },
@@ -122,7 +122,7 @@ Page({
   checkAdd: function(event) {
     
     qcloud.request({
-      url: config.service.checkUrl,
+      url: config.service.mapCheckUrl,
       success: function (response) {
         console.log(response)
         wx.openLocation({

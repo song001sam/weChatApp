@@ -4,14 +4,17 @@
   <form>
     <view class="list1">
       长期待办列表
+      <view>
       <button size='mini' bindtap='new'>新增</button>
       <button size='mini' bindtap='del'>删除</button>
+      <button size='mini' bindtap='del'>完成</button>
+      </view>
     </view>
     <view class="todo">
       
     </view>
   </form>
-  <modal hidden="{{hiddenmodalput}}" title="请输入待办事项" confirm-text="提交" cancel-text="重置" bindcancel="cancel" bindconfirm="confirm">  
-    <input type='text'placeholder="待办事项" auto-focus/>  
+  <modal hidden="{{hiddenmodalput}}" title="请输入待办事项" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+    <input type='text'placeholder="待办事项" auto-focus bindinput="todoInput"/>  
 </modal> 
 </view>

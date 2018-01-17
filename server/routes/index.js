@@ -22,6 +22,7 @@ router.get('/mapCheck', validationMiddleware, controllers.map.check)
 router.get('/todoAdd', validationMiddleware, controllers.todolist.add)
 router.get('/todoDel', validationMiddleware, controllers.todolist.del)
 router.get('/todoFinish', validationMiddleware, controllers.todolist.finish)
+router.get('/todoList', validationMiddleware, controllers.todolist.list)
 // --- 图片上传 Demo --- //
 // 图片上传接口，小程序端可以直接将 url 填入 wx.uploadFile 中
 router.post('/upload', controllers.upload)
