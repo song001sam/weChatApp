@@ -25,7 +25,13 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-              //console.log(res.userInfo)
+              if (this.globalData.userInfo) {
+                switch (this.globalData.userInfo.nickName) {
+                  case '程序猿千歌 - ( ゜- ゜)つロ 乾杯~': { this.globalData.userInfo.otherName = '打一个岔' ;break;}
+                  case '打一个岔': { this.globalData.userInfo.otherName = '程序猿千歌 - ( ゜- ゜)つロ 乾杯~'; break;}
+                  default: { this.globalData.userInfo.hasUserInfo = false }
+                }
+              }
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {

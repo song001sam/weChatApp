@@ -11,10 +11,10 @@
         "text": "首页"
       },
       {
-        "selectedIconPath": "images/map1.png",
-        "iconPath": "images/map.png",
-        "pagePath": "pages/map/map",
-        "text": "位置"
+        "selectedIconPath": "images/game1.png",
+        "iconPath": "images/game.png",
+        "pagePath": "pages/game/game",
+        "text": "小游戏"
       },
       {
         "selectedIconPath": "images/list1.png",
@@ -32,7 +32,7 @@
   },
   "pages":[
     "pages/index/index",
-    "pages/map/map",
+    "pages/game/game",
     "pages/list/list",
     "pages/main/main"
   ],

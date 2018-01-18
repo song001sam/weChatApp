@@ -9,7 +9,8 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     hiddenmodalput: true,
-    todoInfo: []
+    todoInfo: [],
+    viewMe:true
   },
   onLoad: function () {
     this.setData({
@@ -184,5 +185,23 @@ Page({
         }
       }
     })
+  },
+  viewOther:function(){
+    var t = this
+    
+    qcloud.request({
+      url: config.service.todoListUrl,
+      success: function (response) {
+        t.setData({
+          todoInfo: response.data.data,
+          redioCheckId: response.data.data.length > 0 ? response.data.data[0].id : 0,
+          viewMe:!t.data.viewMe
+        })
+      },
+      data: { nickName: t.data.viewMe ? app.globalData.userInfo.otherName : app.globalData.userInfo.nickName},
+      fail: function (err) {
+        util.showModel('查询失败', err)
+      }
+    });
   }
 })

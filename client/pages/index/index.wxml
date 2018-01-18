@@ -6,5 +6,9 @@
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
+    <view  class="btn">
+    <view id="submitAdd" data-hi="WeChat" bindtap="submitAdd">提交位置</view>
+    <view id="checkAdd" data-hi="WeChat" bindtap="checkAdd">查看位置</view>
+  </view>
   </view>
 </view>

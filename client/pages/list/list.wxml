@@ -4,7 +4,7 @@
   <form>
     <view class="list1">
       长期待办列表
-      <view>
+      <view wx:if="{{viewMe}}">
       <button size='mini' bindtap='new'>新增</button>
       <button size='mini' bindtap='del'>删除</button>
       <button size='mini' bindtap='finish'>完成</button>
@@ -13,10 +13,11 @@
     <radio-group class="radio-group" bindchange="radioChange">
     <view wx:for="{{todoInfo}}" wx:key="id" wx:for-index='idx'>
     <view  class="todoList" ><view class="todoListTop"> <radio value="{{item.id}}" checked = "{{idx==0}}"/>{{idx+1}}|{{item.todoName}}</view><view wx:if="{{item.finishFlag==0}}">{{item.updateTime}}|已完成</view><view wx:else>{{item.updateTime}}未完成</view></view>
- 
+
     </view>
   </radio-group>
   </form>
+  <button size='mini' bindtap='viewOther'>切换待办</button>
   <modal hidden="{{hiddenmodalput}}" title="请输入待办事项" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
  
     <input type='text' value='{{todoName}}' placeholder="待办事项" auto-focus bindinput='todoInput'/>  
